@@ -14,7 +14,13 @@ env = SConscript("external_libraries/godot-cpp/SConstruct")
 
 # tweak this if you want to use different folders, or more folders, to store your source code in.
 env.Append(CPPPATH=["src/"])
+env.Append(CPPPATH=['external_libraries/miniscript/MiniScript-cpp/src/MiniScript'])
+
+env.Append(CCFLAGS=["-fexceptions"])
+
 sources = Glob("src/*.cpp")
+miniscript_sources = Glob("external_libraries/miniscript/MiniScript-cpp/src/MiniScript/*.cpp")
+sources += miniscript_sources
 
 if env["platform"] == "macos":
     library = env.SharedLibrary(

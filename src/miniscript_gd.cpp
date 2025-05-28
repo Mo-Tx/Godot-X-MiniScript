@@ -1,25 +1,25 @@
 #include "miniscript_gd.h"
 #include <godot_cpp/core/class_db.hpp>
-#include "MiniScriptInterpreter.h"
+#include "MiniscriptInterpreter.h"
+#include <iostream>
 
 using namespace godot;
 
 void MiniScriptGD::_bind_methods() {
 }
 
-MiniScriptGD::MiniscriptGD() {
+MiniScriptGD::MiniScriptGD() {
 	// Initialize any variables here.
-	interpreter = MiniScript::Interpreter(); // This initializes the interpreter without any source code.
+	interpreter = new MiniScript::Interpreter(); // This initializes the interpreter without any source code.
 }
 
-MiniScriptGD::~MiniscriptGD() {
+MiniScriptGD::~MiniScriptGD() {
 	delete interpreter;
 }
 
-MiniScriptGD
-
-void run(String code) {
-	interpreter = MiniScript::Interpreter(script);
+void MiniScriptGD::run(String code) {
+	delete interpreter; // Clean up any previous interpreter instance.
+	interpreter = new MiniScript::Interpreter(MiniScript::String(code.utf8().get_data()));
 	interpreter->Compile();
 	interpreter->RunUntilDone();
 	print_line("Script executed successfully.");
