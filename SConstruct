@@ -17,6 +17,7 @@ env.Append(CPPPATH=["src/"])
 env.Append(CPPPATH=['external_libraries/miniscript/MiniScript-cpp/src/MiniScript'])
 
 env.Append(CCFLAGS=["-fexceptions"])
+env.Append(CCFLAGS=["-Wno-cpp"]) #anoying warnings
 
 sources = Glob("src/*.cpp")
 miniscript_sources = Glob("external_libraries/miniscript/MiniScript-cpp/src/MiniScript/*.cpp")

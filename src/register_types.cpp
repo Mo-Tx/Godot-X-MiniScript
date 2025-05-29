@@ -1,6 +1,6 @@
 #include "register_types.h"
 
-#include "miniscript_gd.h"
+#include "interpreter.h"
 
 #include <gdextension_interface.h>
 #include <godot_cpp/core/defs.hpp>
@@ -13,7 +13,8 @@ void initialize_example_module(ModuleInitializationLevel p_level) {
 		return;
 	}
 
-	GDREGISTER_RUNTIME_CLASS(MiniScriptGD);
+	GDREGISTER_RUNTIME_CLASS(Interpreter);
+
 }
 
 void uninitialize_example_module(ModuleInitializationLevel p_level) {
