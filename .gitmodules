@@ -3,4 +3,4 @@
 	url = https://github.com/godotengine/godot-cpp
 [submodule "external_libraries/miniscript"]
 	path = external_libraries/miniscript
-	url = https://github.com/godotengine/miniscript
+	url = https://github.com/JoeStrout/miniscript/
