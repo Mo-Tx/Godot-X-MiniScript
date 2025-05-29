@@ -1,6 +1,8 @@
 [submodule "external_libraries/godot-cpp"]
 	path = external_libraries/godot-cpp
+	branch = 4.4
 	url = https://github.com/godotengine/godot-cpp
 [submodule "external_libraries/miniscript"]
 	path = external_libraries/miniscript
+	branch = master
 	url = https://github.com/JoeStrout/miniscript/
