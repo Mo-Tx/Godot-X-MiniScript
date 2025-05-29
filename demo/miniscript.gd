@@ -7,8 +7,8 @@ func _ready() -> void:
 	interp.source_code = """
 	time_passed = 0.0
 	_process = function(delta)
-		time_passed += delta
-		print "time passed: " + time_passed
+		globals.time_passed += delta
+		print "time passed: " + globals.time_passed
 	end function
 	"""
 	
