@@ -19,7 +19,7 @@ public:
 	MiniScriptGD();
 	~MiniScriptGD();
 
-	void run(String code);
+	void run(const String code);
 };
 
 }

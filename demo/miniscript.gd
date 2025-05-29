@@ -1,4 +1,5 @@
 extends MiniScriptGD
 
 func _ready() -> void:
-	pass
+	print("foo")
+	run('print "I DID IT!!!!"')
