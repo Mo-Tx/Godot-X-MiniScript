@@ -4,8 +4,7 @@ var interp := Interpreter.new()
 
 func _ready() -> void:
 	
-	Interpreter.set_standard_output(test_output)
-	Interpreter.set_implicit_output(test_output)
+	print(Interpreter.get_standard_output())
 	
 	interp.source_code = """
 	//demo 1: variable integration!
