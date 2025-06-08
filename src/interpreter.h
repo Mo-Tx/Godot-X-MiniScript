@@ -15,6 +15,16 @@ private:
 
     String source_code;
 
+    static Callable* standard_output;
+    static Callable* implicit_output;
+    static Callable* error_output;
+
+    enum class OutputType{
+        STANDARD,
+        IMPLICIT,
+        ERROR
+    };
+
 protected:
 	static void _bind_methods();
 
@@ -33,9 +43,16 @@ public:
     Variant get_global_value(const String &name);
     void set_global_value(const String &name, const Variant &value);
 
-    //static void bind_callable(const String &name, const Callable &callable);
+    static void set_standard_output(const Callable &callable);
+    static Callable get_standard_output();
 
-    
+    static void set_implicit_output(const Callable &callable);
+    static Callable get_implicit_output();
+
+    static void set_error_output(const Callable &callable);
+    static Callable get_error_output();
+
+    static void output(OutputType type, const String &output, bool addLineBreak = true);
 };
     
 
