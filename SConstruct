@@ -16,9 +16,15 @@ env = SConscript("external_libraries/godot-cpp/SConstruct")
 env.Append(CPPPATH=["src/"])
 env.Append(CPPPATH=['external_libraries/miniscript/MiniScript-cpp/src/MiniScript'])
 
+#add exceptions becuase JoeStrout really loves those
 env.Append(CCFLAGS=["-fexceptions"])
+if env["platform"] == "web": #add them for web too (this was REALLY hard to set up GODDAMN)
+    env.Append(CCFLAGS=["-fwasm-exceptions"])
+
 env.Append(CCFLAGS=["-Wno-cpp"]) #anoying warnings
+
 env.Append(CCFLAGS=["-fpermissive"])
+
 
 sources = Glob("src/*.cpp")
 miniscript_sources = Glob("external_libraries/miniscript/MiniScript-cpp/src/MiniScript/*.cpp")
