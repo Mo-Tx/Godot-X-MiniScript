@@ -4,7 +4,8 @@
       "name": "linux-gcc-x64",
       "includePath": [
         "${workspaceFolder}/**",
-        "${workspaceFolder}/external_libraries/miniscript/MiniScript-cpp/src/MiniScript"
+        "${workspaceFolder}/external_libraries/miniscript/MiniScript-cpp/src/MiniScript",
+        "${workspaceFolder}/external_libraries/godot-cpp"
       ],
       "defines": [],
       "compilerPath": "/usr/bin/gcc",

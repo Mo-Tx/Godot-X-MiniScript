@@ -51,6 +51,7 @@
     "**/.vscode",
     "**/.vscode/**"
   ],
+  "c-cpp-flylint.clang.includePaths": null,
   "C_Cpp_Runner.useAddressSanitizer": false,
   "C_Cpp_Runner.useUndefinedSanitizer": false,
   "C_Cpp_Runner.useLeakSanitizer": false,

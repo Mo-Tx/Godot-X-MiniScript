@@ -9,7 +9,6 @@
 #include <godot_cpp/classes/scene_tree.hpp>
 
 
-
 using namespace godot;
 
 Callable* Interpreter::standard_output = nullptr;
@@ -103,7 +102,7 @@ void Interpreter::set_standard_output(const Callable &callable) {
 }
 
 Callable Interpreter::get_standard_output(){
-    return *standard_output;
+    if (standard_output!=nullptr) return *standard_output; else return Callable();
 }
 
 void Interpreter::set_implicit_output(const Callable &callable) {
@@ -112,7 +111,7 @@ void Interpreter::set_implicit_output(const Callable &callable) {
 }
 
 Callable Interpreter::get_implicit_output(){
-    return *implicit_output;
+    if (implicit_output!=nullptr) return *implicit_output; else return Callable();
 }
 
 void Interpreter::set_error_output(const Callable &callable) {
@@ -121,7 +120,7 @@ void Interpreter::set_error_output(const Callable &callable) {
 }
 
 Callable Interpreter::get_error_output(){
-    return *error_output;
+    if (error_output!=nullptr) return *error_output; else return Callable();
 }
 
 void Interpreter::output(OutputType type, const String &output, bool addLineBreak) {

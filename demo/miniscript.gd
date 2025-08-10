@@ -4,9 +4,17 @@ var interp := Interpreter.new()
 
 func _ready() -> void:
 	
+	##this is supposed to be null
 	print(Interpreter.get_standard_output())
 	
+	##these make debugging easier on web
+	interp.set_standard_output(output)
+	interp.set_implicit_output(output)
+	interp.set_error_output(output)
+	
 	interp.source_code = """
+	print "test"
+	
 	//demo 1: variable integration!
 	globals.time_passed = 0.0
 	_process = function(delta)
@@ -23,10 +31,10 @@ func _ready() -> void:
 	
 	interp.run_until_done(60) ## run source code
 	
-	interp.repl("1+1", 1) ##REPL and implicit output testing
+##	interp.repl("1+1", 1) ##REPL and implicit output testing ***DOES NOT WORK ON WEB***
 	
-	interp.repl("foo()", 1) #excecute the foo function
-	
+##	interp.repl("foo()", 1) #excecute the foo function
+
 	##error handling test
 	interp.source_code = """
 	cal
@@ -44,3 +52,5 @@ func compare_strings(str1: String, str2: String):
 	
 func test_output(message: String):
 	print("Ipsum INTERPRETER: " + message)
+
+func output(message: String): %Label.text += message

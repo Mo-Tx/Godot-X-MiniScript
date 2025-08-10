@@ -25,8 +25,8 @@ android.release.x86_64 = "res://bin/libgdxms.android.template_debug.x86_64.so"
 android.debug.arm64 = "res://bin/libgdxms.android.template_debug.arm64.so"
 android.release.arm64 = "res://bin/libgdxms.android.template_debug.arm64.so"
 
-web.debug.wasm32 = "res://bin/libgdxms.web.template_debug.wasm32.wasm"
-web.release.wasm32 = "res://bin/libgdxms.web.template_debug.wasm32.wasm"
+web.debug.wasm32 = "res://bin/libgdxms.web.template_debug.wasm32.nothreads.wasm"
+web.release.wasm32 = "res://bin/libgdxms.web.template_debug.wasm32.nothreads.wasm"
 
 
 [dependencies]
